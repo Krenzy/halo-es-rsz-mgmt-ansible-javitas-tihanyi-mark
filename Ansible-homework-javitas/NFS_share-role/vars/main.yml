@@ -1,0 +1,13 @@
+---
+# vars file for NFS_share-role
+
+  nfs_package:
+    - nfs-utils
+    - nfs4-acl-tools
+
+  nfs_src:
+    - nfs
+
+nfs_master_folder: /nfs/share
+nfs_dest_folder: /data/comp
+nfs_dest_opts: "rw,sync"

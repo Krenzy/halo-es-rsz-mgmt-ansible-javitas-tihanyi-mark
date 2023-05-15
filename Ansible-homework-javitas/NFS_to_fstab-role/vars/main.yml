@@ -1,0 +1,6 @@
+---
+# vars file for NFS_to_fstab-role
+
+nfs_dest_folder: /data/comp
+nfs_dest_opts: "rw,sync"
+fstab_dest_folder: /data/dir

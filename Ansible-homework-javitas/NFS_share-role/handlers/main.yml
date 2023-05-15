@@ -1,0 +1,7 @@
+---
+# handler file for NFS_share-role
+  - name: restart_nfs
+    service:
+      name: "{{ item }}"
+      state: restarted
+    with_items: "{{ nfs_src }}"

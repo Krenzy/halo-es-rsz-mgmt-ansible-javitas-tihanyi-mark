@@ -1,0 +1,1 @@
+This file structure made by "ansible-galaxy init role_name" command.

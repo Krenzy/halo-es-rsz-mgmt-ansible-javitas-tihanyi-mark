@@ -1,0 +1,19 @@
+---
+# tasks file for NFS_to_fstab-role
+
+  - name: NFS share folder is exist?
+    ansible.builtin.file:
+      path: "{{ nfs_dest_folder }}"
+      state: directory
+      permission: 0777
+
+  - name: NFS mount to fstab
+    ansible.builtin.mount:
+      path: "{{ fstab_dest_folder }}"
+      src: "{{ nfs_dest_folder }}"
+      fstype: nfs
+      opts: "{{ nfs_dest_opts }}"
+      state: mounted
+        notify:
+          - reboot when NFS-to-fstab
+    

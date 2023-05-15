@@ -1,0 +1,8 @@
+---
+# handlers file for NFS_to_fstab-role
+
+  - name: reboot when NFS-to-fstab
+    ansible.builtin.reboot:
+      msg: "After 10s system will reboot, because fstab modified"
+      post_reboot_delay: 10
+      

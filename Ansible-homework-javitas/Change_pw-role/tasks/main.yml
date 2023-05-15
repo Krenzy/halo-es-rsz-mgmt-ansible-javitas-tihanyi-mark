@@ -1,0 +1,10 @@
+---
+# tasks file for Change_pw-role
+
+  - name: Change password
+    ansible.builtin.user:
+      name: "{{ user_name }}"
+        notify:
+          - username check
+      password: "{{ user_pass | password_hash('sha512') }}"
+      

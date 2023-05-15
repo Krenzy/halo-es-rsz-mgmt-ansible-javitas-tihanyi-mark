@@ -1,0 +1,22 @@
+---
+# tasks file for NFS_share-role
+
+  - name: NFS utils present
+    ansible.builtin.yum:
+      name: "{{ nfs_package }}"
+      state: present
+
+  - name: Mount point exist check
+    ansible.builtin.file:
+      path: "{{ nfs_dest_folder }}"
+      state: directory
+      mode: 0777
+
+  - name: NFS share mount
+    ansible.posix.mount:
+      src: "{{ nfs_master_folder }}"
+      path: "{{ nfs_dest_folder }}"
+      fstype: nfs
+      opts: "{{ nfs_dest_opts }}"
+      state: mounted
+      

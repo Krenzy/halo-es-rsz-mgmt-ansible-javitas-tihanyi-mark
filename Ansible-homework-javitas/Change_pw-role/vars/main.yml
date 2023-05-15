@@ -1,0 +1,5 @@
+---
+# vars file for Change_pw-role
+
+user_name: "user_name,!root"
+user_pass: "password"
